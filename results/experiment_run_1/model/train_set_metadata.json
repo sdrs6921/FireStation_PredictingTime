@@ -1897,7 +1897,7 @@
         },
         "vocab_size": 438
     },
-    "data_train_hdf5_fp": "C:\\Users\\TEMP\\FireStation_PredictingTime\\firestation_TimeTaken.hdf5",
+    "data_train_hdf5_fp": "C:\\\\FireStation_PredictingTime\\\\firestation_TimeTaken.hdf5",
     "day": {
         "idx2str": [
             "<UNK>",
