@@ -1,6 +1,6 @@
 {
-    "command": "C:\\Users\\Charles Park\\.conda\\envs\\tensorflow\\Scripts\\ludwig train --data_csv C:\\\\FireStation_PredictingTime\\\\firestation_TimeTaken.csv --model_definition {input_features: [{name: FirestationParent, type: category}, {name: FirestationChild, type: category},{name: Town, type: category},{name: Village, type: category},{name: DistanceKm, type: numerical},{name: day, type: category}], output_features: [{name: TimeTakenSec, type: numerical}]}",
-    "input_data": "C:\\\\FireStation_PredictingTime\\\\firestation_TimeTaken.csv",
+    "command": "C:\\ProgramData\\Anaconda\\Scripts\\ludwig experiment --data_csv C:\\Users\\Playdata\\Desktop\\Safety_Project\\FireStation_PredictingTime\\train.csv --model_definition_file C:\\Users\\Playdata\\Desktop\\Safety_Project\\Safety_Model_Definition.yaml",
+    "input_data": "C:\\Users\\Playdata\\Desktop\\Safety_Project\\FireStation_PredictingTime\\train.csv",
     "ludwig_version": "0.2.2.8",
     "model_definition": {
         "combiner": {
@@ -8,48 +8,45 @@
         },
         "input_features": [
             {
-                "name": "FirestationParent",
+                "name": "Parent",
                 "tied_weights": null,
                 "type": "category"
             },
             {
-                "name": "FirestationChild",
+                "name": "Child",
                 "tied_weights": null,
                 "type": "category"
             },
             {
-                "name": "Town",
-                "tied_weights": null,
-                "type": "category"
-            },
-            {
-                "name": "Village",
-                "tied_weights": null,
-                "type": "category"
-            },
-            {
-                "name": "DistanceKm",
+                "name": "Day",
                 "tied_weights": null,
                 "type": "numerical"
             },
             {
-                "name": "day",
+                "name": "TimeSpan",
                 "tied_weights": null,
-                "type": "category"
+                "type": "numerical"
+            },
+            {
+                "name": "DistanceMeter",
+                "tied_weights": null,
+                "type": "numerical"
             }
         ],
         "output_features": [
             {
-                "clip": null,
                 "dependencies": [],
                 "loss": {
-                    "type": "mean_squared_error",
+                    "confidence_penalty": 0,
+                    "positive_class_weight": 1,
+                    "robust_lambda": 0,
                     "weight": 1
                 },
-                "name": "TimeTakenSec",
+                "name": "In5Mins",
                 "reduce_dependencies": "sum",
                 "reduce_input": "sum",
-                "type": "numerical"
+                "threshold": 0.5,
+                "type": "binary"
             }
         ],
         "preprocessing": {
